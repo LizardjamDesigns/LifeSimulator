@@ -1,0 +1,56 @@
+#splashScreen {
+	padding-top: 40%;
+	padding-bottom: 40%;
+}
+
+#content {
+	color: white;
+	height: 100%;
+}
+
+#actionText {
+	color: white;
+	text-align: center;
+}
+
+#workHours {
+	text-align: center;
+}
+
+#sleepHours {
+	text-align: center;
+}
+
+#restLabel {
+	background-color: blue;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	color: blue;
+}
+
+#bladderLabel{
+	background-color: yellow;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	color: yellow;
+}
+
+#hungerLabel {
+	background-color: red;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	color: red;
+}
+
+#winPic {
+	margin: auto;
+	height: 200px;
+	width: 300px;
+}
+
+a {
+	text-decoration: none;
+}

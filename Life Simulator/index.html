@@ -1,0 +1,262 @@
+<!-- Larry Thompson WEB 125 -->
+<!-- Final Project -->
+
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Web125Gaming</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="themes/finalTheme.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="script.js"></script>
+</head>
+
+<body> 
+	<div id="page" data-role="page" data-theme="a" id="page01">
+		<div id="header" data-role="header">
+			<h1 id="headerTitle">Life Simulator!</h1>
+		</div>
+		
+		<div id="splashScreen" data-role="content" id="content">
+			
+			<a href="#page02"><input type="button" value="Start Game"></a>
+			
+		</div>
+		
+		<div id="footer" data-role="footer">
+			<h1>Created by Larry Thompson</h1>
+		</div>
+	</div>
+	
+	
+	<div data-role="page" id="page02" data-theme="a">
+		<div data-role="header">
+			
+			<h1 id="headerTitle">Character Creation</h1>			
+			
+		</div>
+		
+		<div id="content" data-role="content">
+			
+			<form>
+				Character Name:<br>
+				<input id="nameInput" type="text" name="name">
+				<br>
+				Age:<br>
+				<input id="ageInput" type="text" name="age">
+				<br>
+				Character Job:<br>
+				<select id="jobInput" name="job">
+					<option value="Fast Food">Fast Food</option>
+					<option value="Retail Associate">Retail Associate</option>
+					<option value="Programmer">Programmer</option>
+					<option value="General Manager">General Manager</option>
+					<option value="Construction Worker">Construction Worker</option>
+					<option value="Artist">Artist</option>
+					<option value="Desk Job">Desk Job</option>
+					<option value="Tech Support">Tech Support</option>
+				</select>
+				<br>
+				<a href="#page03"><input type="button" onclick="userCreation()" value="Start Game"></a>
+			</form>
+			
+		</div>
+		
+		<div data-role="footer">
+			
+			<h1>Created by Larry Thompson</h1>
+			
+		</div>
+	</div>
+		
+		
+	<div data-role="page" id="page03" data-theme="a">
+		<div data-role="header">
+			
+			<h1>Life Simulator</h1>
+			
+			<audio id="eatSound"> <source src="sounds/eating.mp3" type="audio/mpeg"> </audio>
+			<audio id="restroomSound">	<source src="sounds/restroom.mp3" type="audio/mpeg"> </audio>
+			<audio id="sleepSound">	<source src="sounds/sleeping.mp3" type="audio/mpeg"> </audio>
+			<audio id="workSound">	<source src="sounds/work.mp3" type="audio/mpeg"> </audio>
+			
+			
+			
+		</div>
+		
+		<div data-role="content" id="content">
+			
+			<h5 id="nameLabel"></h5>
+			<h5 id="ageLabel"></h5>
+			<h5 id="jobLabel"></h5>
+			<h5 id="bladderLeft">Bladder Level:   <canvas id="bladderLabel" width="200" height="30"></canvas> </h5> 
+			<h5 id="hungerLeft">Hunger Level:    <canvas id="hungerLabel" width="200" height="30"></canvas> </h5> 
+			<h5 id="restLeft">Rest Level:      <canvas id="restLabel" width="200" height="30"></canvas> </h5> 
+			<h5 id="moneyLabel"></h5>
+			<br>
+			<h5 id="bladderWarning"></h5>
+			<h5 id="hungerWarning"></h5>
+			<h5 id="restWarning"></h5>
+			<br>
+			<h5 id="message">Welcome to the Life Simulator. What would you like to do?</h5>
+			<br>
+			<h3 id="lottoMessage"></h3>
+			
+			<a href="#page04"><input type="button"  value="Eat Food"></a> <a href="#page05"><input type="button"  value="Go to Work"></a>
+			
+			<a href="#page06"><input type="button"  value="Go to Sleep"></a> <input type="button" onclick="useRestroom()" value="Use Restroom">
+			
+			<input type="button" onclick="playLotto()" value="Play Lottery"> <input type="button" value="Buy Dream Home ($50,000)" onclick="buyHouse()">
+				
+		</div>
+		
+		<div data-role="footer">
+			
+			<h1>Created by Larry Thompson</h1>
+			
+		</div>
+	</div>
+	
+	
+	<div data-role="page" id="page04" data-theme="a">
+		<div data-role="header">
+			<h1>Food Menu</h1>
+		</div>
+		
+		<div data-role="content" id="content">
+			
+			<h4 id="actionText">What food would you like to eat?</h4>
+			
+			<form>
+				<select id="foodType" name="Food">
+					<option value="Pizza">Pizza $20.00</option>
+					<option value="Salad">Salad $12.00</option>
+					<option value="Pancakes">Pancakes  $8.00</option>
+					<option value="Cheeseburger">Cheeseburger  $7.50</option>
+					<option value="Tacos">Tacos  $5.00</option>
+					<option value="Fish and Chips">Fish and Chips  $15.00</option>
+					<option value="Steak">Steak  $25.00</option>
+					<option value="Ramen Noodles">Ramen Noodles  $1.25</option>
+				</select>
+			</form>
+			
+			<a href="#page03"><input type="button" onclick="eat()" value="Eat"></a>
+			
+			<a href="#page03"><input type="button" onclick="update()" value="Go Back"></a>
+			
+		</div>
+		
+		<div data-role="footer">
+			
+			<h1>Created by Larry Thompson</h1>
+			
+		</div>
+	</div>
+	
+	<div data-role="page" id="page05" data-theme="a">
+		<div data-role="header">
+			<h1>Go to Work</h1>
+		</div>
+		
+		<div data-role="content" id="content">
+			
+			<h4 id="actionText">You are heading to work.</h4>
+			<h4 id="actionText">How long would you like to work? (Hours)</h4>
+			
+			<form>
+				<input id="workHours" type="number" name="Work Hours">
+			</form>
+			
+			<a href="#page03"><input type="button" onclick="work()" value="Work"></a>
+			
+			<a href="#page03"><input type="button" onclick="update()" value="Go Back"></a>
+			
+		</div>
+		
+		<div data-role="footer">
+			
+			<h1>Created by Larry Thompson</h1>
+			
+		</div>
+	</div>
+	
+	<div data-role="page" id="page06" data-theme="a">
+		<div data-role="header">
+			<h1>Sleepy Time</h1>
+		</div>
+		
+		<div data-role="content" id="content">
+			
+			<h4 id="actionText">How long would you like to sleep? (Hours)</h4>
+			
+			<form>
+				<input id="sleepHours" type="number" name="Sleep Hours">
+			</form>
+			
+			<a href="#page03"><input type="button" onclick="sleep()" value="Sleep"></a>
+			
+			<a href="#page03"><input type="button" onclick="update()" value="Go Back"></a>
+			
+		</div>
+		
+		<div data-role="footer">
+			
+			<h1>Created by Larry Thompson</h1>
+			
+		</div>
+	</div>
+	
+	<div data-role="page" id="pageEnd" data-theme="a">
+		<div data-role="header">
+			<h1>Too Bad</h1>
+			<audio id="endSound">	<source src="sounds/ending.mp3" type="audio/mpeg"> </audio>
+		</div>
+		
+		<div data-role="content" id="content">
+		
+			<h3>You have treated your person poorly</h3>
+			<h1 id="endMessage"></h1>
+			<br>
+			<h3>Thanks for playing!</h3>
+			<br>
+			<a href="#page01"><input type="button" onclick="restart()" value="Play Again?"></a>
+		</div>
+		
+		<div data-role="footer">
+			
+			<h1>Created by Larry Thompson</h1>
+			
+		</div>
+	</div>
+	
+	<div data-role="page" id="pageWin" data-theme="a">
+		<div data-role="header">
+			<h1>Congratulations!</h1>
+			<audio id="winSound">	<source src="sounds/win.wav" type="audio/wav"> </audio>
+		</div>
+		
+		<div data-role="content" id="content">
+		
+			<h3>You have purchased your dream home!</h3>
+			<h1>YOU WIN</h1>
+			<img id="winPic" src="images/dreamHouse.jpg" />
+			<br>
+			<h3>Thanks for playing!</h3>
+			<br>
+			<a href="#page01"><input type="button" onclick="restart()" value="Play Again?"></a>
+		</div>
+		
+		<div data-role="footer">
+			
+			<h1>Created by Larry Thompson</h1>
+			
+		</div>
+	</div>
+</body>
+</html>
